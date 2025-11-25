@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Acessórios para cozinha",
+    "tipo": "Instalação",
+    "image": "/servicos/cozinha.png"
+  },
+  {
+    "id": 2,
+    "title": "Chuveiro elétrico",
+    "tipo": "Instalação, Troca",
+    "image": "/servicos/chuveiro.png"
+  },
+  {
+    "id": 3,
+    "title": "Gabinete banheiro",
+    "tipo": "Instalação, Fixação",
+    "image": "/servicos/gabinete-banheiro.png"
+  },
+  {
+    "id": 4,
+    "title": "Fechadura",
+    "tipo": "Troca",
+    "image": "/servicos/fechadura.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Acessórios para cozinha",
+    "tipo": "Instalação",
+    "image": "/servicos/cozinha.png"
+  },
+  {
+    "id": 6,
+    "title": "Chuveiro elétrico",
+    "tipo": "Instalação, Troca",
+    "image": "/servicos/chuveiro.png"
+  },
+  {
+    "id": 7,
+    "title": "Gabinete banheiro",
+    "tipo": "Instalação, Fixação",
+    "image": "/servicos/gabinete-banheiro.png"
+  },
+  {
+    "id": 8,
+    "title": "Fechadura",
+    "tipo": "Troca",
+    "image": "/servicos/fechadura.jpg"
+  }
+]
