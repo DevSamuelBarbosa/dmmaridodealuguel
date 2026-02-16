@@ -38,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá DM')}`}
+                  href={`https://wa.me/55${whatsappNumber}?text=${encodeURIComponent('Olá DM')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-400 transition-colors flex items-center gap-2"
