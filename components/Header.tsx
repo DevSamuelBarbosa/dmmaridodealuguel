@@ -1,5 +1,7 @@
 import React from "react";
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -20,7 +22,7 @@ export default function Header() {
         </div>
         <div className="md:hidden">
           <a
-            href="https://wa.me/?text=Olá%20DM%20Marido%20de%20Aluguel%2C%20gostaria%20de%20informações"
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá DM Marido de Aluguel, gostaria de informações')}`}
             className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
           >
             WhatsApp

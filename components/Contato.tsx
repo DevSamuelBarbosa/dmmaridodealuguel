@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
+const email = process.env.NEXT_PUBLIC_EMAIL || "";
+
 export default function Contato() {
   return (
     <section id="contato" className="py-16 sm:py-24 bg-gray-50">
@@ -13,7 +16,7 @@ export default function Contato() {
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="https://wa.me/?text=Olá%20DM%20Marido%20de%20Aluguel%2C%20gostaria%20de%20solicitar%20um%20orçamento"
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá DM Marido de Aluguel, gostaria de solicitar um orçamento')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors"
@@ -21,7 +24,7 @@ export default function Contato() {
             <FontAwesomeIcon icon={faWhatsapp} className="mr-2" /> WhatsApp
           </a>
           <a
-            href="mailto:contato@dmmaridodealuguel.com"
+            href={`mailto:${email}`}
             className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> E-mail

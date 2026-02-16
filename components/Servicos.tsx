@@ -18,11 +18,13 @@ function getIcon(tipo: string) {
   return iconMap[key] || faTools;
 }
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
+
 export default function Servicos() {
   const whatsappLink = (service: string) => {
     const message = `Olá DM Marido de Aluguel, eu gostaria de solicitar o serviço ${service}`;
     const encoded = encodeURIComponent(message);
-    return `https://wa.me/?text=${encoded}`;
+    return `https://wa.me/55${whatsappNumber}?text=${encoded}`;
   };
 
   return (
@@ -71,6 +73,17 @@ export default function Servicos() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 text-center">
+        <a
+            href={`https://wa.me/55${whatsappNumber}?text=Olá%20DM%20Marido%20de%20Aluguel%2C%20gostaria%20de%20solicitar%20um%20orçamento`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors"
+        >
+            <FontAwesomeIcon icon={faWhatsapp} className="mr-2" /> Solicitar outro serviço
+        </a>
       </div>
     </section>
   );

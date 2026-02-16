@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
+const email = process.env.NEXT_PUBLIC_EMAIL || "";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
@@ -35,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://wa.me/?text=Olá%20DM"
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá DM')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-400 transition-colors flex items-center gap-2"
@@ -44,7 +47,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:contato@dmmaridodealuguel.com" className="hover:text-blue-400 transition-colors flex items-center gap-2">
+                <a href={`mailto:${email}`} className="hover:text-blue-400 transition-colors flex items-center gap-2">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-1" /> E-mail
                 </a>
               </li>
@@ -52,7 +55,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 DM Marido de Aluguel. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} DM Marido de Aluguel. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
