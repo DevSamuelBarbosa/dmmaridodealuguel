@@ -37,13 +37,13 @@ export default function Faq() {
             <div key={index} className="bg-white rounded-lg border border-gray-200">
               <button
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-4 text-left flex items-center rounded-lg justify-between hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 <span className="font-semibold text-gray-900">{faq.question}</span>
                 <span className={`text-blue-600 text-xl transition-transform ${openFaq === index ? 'rotate-180' : ''}`}>▼</span>
               </button>
               {openFaq === index && (
-                <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 text-gray-700">
+                <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 text-gray-700 rounded-b-lg">
                   {faq.answer}
                 </div>
               )}
