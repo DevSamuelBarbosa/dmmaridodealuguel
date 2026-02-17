@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 import depoimentos from "@/data/depoimentos.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -12,9 +12,13 @@ function shuffleAndPick<T>(arr: T[], count: number): T[] {
 }
 
 export default function Depoimentos() {
-  const exibidos = useMemo(() => shuffleAndPick(depoimentos, 6), []);
+  const [exibidos, setExibidos] = useState(depoimentos.slice(0, 6));
   const [currentIndex, setCurrentIndex] = useState(0);
   const total = exibidos.length;
+
+  useEffect(() => {
+    setExibidos(shuffleAndPick(depoimentos, 6));
+  }, []);
 
   const next = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % total);

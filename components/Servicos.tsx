@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -44,7 +44,7 @@ const categorias = [
   {
     titulo: "Reparos e Reformas",
     icon: faHammer,
-    cor: "amber",
+    cor: "orange",
     itens: [
       "Reparos em Azulejos",
       "Reparos em Portas e Janelas",
@@ -115,7 +115,7 @@ const categorias = [
 
 const corMap: Record<string, { bg: string; border: string; icon: string; badge: string }> = {
   blue:   { bg: "bg-blue-50",   border: "border-blue-200", icon: "text-blue-600",   badge: "bg-blue-100 text-blue-700" },
-  amber:  { bg: "bg-amber-50",  border: "border-amber-200", icon: "text-amber-600",  badge: "bg-amber-100 text-amber-700" },
+  orange: { bg: "bg-orange-50", border: "border-orange-200", icon: "text-orange-600", badge: "bg-orange-100 text-orange-700" },
   yellow: { bg: "bg-yellow-50", border: "border-yellow-200", icon: "text-yellow-600", badge: "bg-yellow-100 text-yellow-700" },
   green:  { bg: "bg-green-50",  border: "border-green-200", icon: "text-green-600",  badge: "bg-green-100 text-green-700" },
   cyan:   { bg: "bg-cyan-50",   border: "border-cyan-200", icon: "text-cyan-600",   badge: "bg-cyan-100 text-cyan-700" },
@@ -127,14 +127,21 @@ function shuffleAndPick<T>(arr: T[], count: number): T[] {
 }
 
 export default function Servicos() {
-  const categoriasRandom = useMemo(
-    () =>
+  const [categoriasRandom, setCategoriasRandom] = useState(
+    categorias.map((cat) => ({
+      ...cat,
+      itensExibidos: cat.itens.slice(0, 4),
+    }))
+  );
+
+  useEffect(() => {
+    setCategoriasRandom(
       categorias.map((cat) => ({
         ...cat,
         itensExibidos: shuffleAndPick(cat.itens, 4),
-      })),
-    []
-  );
+      }))
+    );
+  }, []);
 
   const whatsappLink = (service: string) => {
     const message = `Olá DM Marido de Aluguel, eu gostaria de solicitar o serviço ${service}`;
