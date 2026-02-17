@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp, faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMapMarkerAlt, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
@@ -31,9 +31,31 @@ export default function Footer() {
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Serviços de manutenção, reparos e reformas com qualidade e confiança.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-400">
+            <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="text-blue-400" />
               <span>Marau - RS e região</span>
+            </div>
+            
+            {/* Redes Sociais */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.facebook.com/andrieleedouglas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="text-2xl" />
+              </a>
+              <a
+                href="https://www.instagram.com/dm.maridodealugueloficial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
+              </a>
             </div>
           </div>
 

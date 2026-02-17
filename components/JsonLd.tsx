@@ -94,7 +94,8 @@ export default function JsonLd() {
       ],
     },
     sameAs: [
-      // Adicionar links de redes sociais quando disponíveis
+      'https://www.facebook.com/andrieleedouglas/',
+      'https://www.instagram.com/dm.maridodealugueloficial/',
     ],
   }
 
