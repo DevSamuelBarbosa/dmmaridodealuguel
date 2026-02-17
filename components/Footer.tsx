@@ -67,13 +67,13 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  href={`https://wa.me/55${whatsappNumber}?text=${encodeURIComponent('Olá DM')}`}
+                  href={`https://wa.me/55${whatsappNumber}?text=${encodeURIComponent('Olá DM, gostaria de solicitar um orçamento.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-green-400 transition-colors flex items-center gap-3"
                 >
                   <FontAwesomeIcon icon={faWhatsapp} className="text-green-400 text-lg" />
-                  <span>(54) 99339-7936</span>
+                    <span>{`(54) ${whatsappNumber.slice(-9, -4)}-${whatsappNumber.slice(-4)}`}</span>
                 </a>
               </li>
               <li>

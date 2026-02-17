@@ -1,0 +1,25 @@
+{
+  "name": "DM Marido de Aluguel",
+  "short_name": "DM Marido Aluguel",
+  "description": "Serviços de marido de aluguel, manutenção e reparos em Marau/RS e região",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0284c7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icone_logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["services", "business", "utilities"],
+  "lang": "pt-BR"
+}
