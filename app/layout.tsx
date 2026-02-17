@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "DM Marido de Aluguel | Serviços em Marau/RS e região",
   description:
     "Serviços de marido de aluguel, manutenção, reparos, hidráulica, elétrica, pintura, limpeza e muito mais em Marau/RS e região. Solicite orçamento pelo WhatsApp!",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

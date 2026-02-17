@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faMapMarkerAlt, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
 const email = process.env.NEXT_PUBLIC_EMAIL || "";
@@ -14,10 +15,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo e descrição */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-3xl font-extrabold text-blue-400">DM</span>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/icone_logo.jpg"
+                alt="DM Marido de Aluguel"
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-blue-400/30"
+              />
               <div className="flex flex-col text-sm">
-                <span className="font-bold text-white leading-tight">Marido de Aluguel</span>
+                <span className="font-bold text-white leading-tight">DM Marido de Aluguel</span>
                 <span className="text-xs text-gray-400 leading-tight">Serviços Gerais</span>
               </div>
             </div>

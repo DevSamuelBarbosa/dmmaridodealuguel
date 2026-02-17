@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP || "";
 
@@ -7,10 +8,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <span className="text-2xl font-bold text-blue-600">DM</span>
+        <a href="#" className="flex items-center gap-3">
+          <Image
+            src="/icone_logo.jpg"
+            alt="DM Marido de Aluguel"
+            width={50}
+            height={50}
+            className="rounded-full border-2 border-blue-200 shadow-sm"
+          />
           <div className="flex flex-col text-sm">
-            <span className="font-semibold text-gray-900 leading-tight">Marido de Aluguel</span>
+            <span className="font-semibold text-gray-900 leading-tight">DM Marido de Aluguel</span>
             <span className="text-xs text-gray-500 leading-tight">Serviços Gerais</span>
           </div>
         </a>
